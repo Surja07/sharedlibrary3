@@ -6,3 +6,7 @@ def build()
 {
     sh "mvn clean package"
 }
+def deployment(jobname,ip)
+{
+  sh "scp /var/lib/jenkins/workspace/${shdcall_job}/HelloWorld.java ubuntu@${ip}:/home/ubuntu/demo4"
+}
